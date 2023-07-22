@@ -39,11 +39,11 @@ app.get("/search", async (request,response) => {
                 }
             }
         ]).toArray()
-        console.log(result)
+        //console.log(result)
         response.send(result)
     } catch (error) {
         response.status(500).send({message: error.message})
-        console.log(error)
+        //console.log(error)
     }
 })
 
@@ -53,7 +53,7 @@ app.get("/get/:id", async (request, response) => {
             "_id" : ObjectId(request.params.id)
         })
         response.send(result)
-        //console.log(result)
+        console.log(result)
     } catch (error) {
         response.status(500).send({message: error.message})
     }
